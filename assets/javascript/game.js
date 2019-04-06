@@ -14,14 +14,22 @@ var gems1 = randomizeGems();
 var gems2 = randomizeGems();
 var gems3 = randomizeGems();
 var gems4 = randomizeGems();
+var samegem = ''
 var keepRunning = true;
-console.log("g1: "+gems1)
-console.log("g2: "+gems2)
-console.log("g3: "+gems3)
-console.log("g4: "+gems4)
-
 var score = 0;
+console.log("g1: "+gems1);
+console.log("g2: "+gems2);
+console.log("g3: "+gems3);
+console.log("g4: "+gems4);
 
+$("#win-score").text("Wins: "+wins);
+$("#loss-score").text("Losses: "+losses);
+$("#score-board").text("Score: "+score);
+
+
+// if(keepRunning == false){
+//   restart();
+// }
 
 $("#gem1").click(function(){
  console.log("g1 added") 
@@ -30,43 +38,126 @@ $("#gem1").click(function(){
   if(score > randomNum){
     alert("You LOSE");
     keepRunning=false;
-    console.log(keepRunning);
-    randomizeGems(gems1)
-    console.log("re-randomized gems1: "+gems1)
+    console.log("lose: "+keepRunning);
     losses++;
-
-}
+    $("#loss-score").text("Losses: "+losses);
+    restart();
+  }
   else if(score < randomNum){
     console.log("not broken yet");
+    $("#score-board").text("Score: "+score);
 }
   else{
     console.log("you win");
     wins++;
     keepRunning = false;
-    console.log(keepRunning);
-}
-
-
-
-
+    console.log("win: "+keepRunning);
+    restart();
+    $("#win-score").text("Wins: "+wins);
+    alert("YOU WIN");
+    restart();
+  }
 })
 $("#gem2").click(function(){
   console.log("g2 added") 
   score+=gems2;
   console.log("score: "+score) 
+   if(score > randomNum){
+     alert("You LOSE");
+     keepRunning=false;
+     console.log("lose: "+keepRunning);
+     losses++;
+     $("#loss-score").text("Losses: "+losses);
+     restart();
+   }
+   else if(score < randomNum){
+     console.log("not broken yet");
+     $("#score-board").text("Score: "+score);
+ }
+   else{
+     console.log("you win");
+     wins++;
+     keepRunning = false;
+     console.log("win: "+keepRunning);
+     restart();
+     $("#win-score").text("Wins: "+wins);
+     alert("YOU WIN");
+     restart();
+   }
  })
  $("#gem3").click(function(){
   console.log("g3 added") 
   score+=gems3;
   console.log("score: "+score) 
+   if(score > randomNum){
+     alert("You LOSE");
+     keepRunning=false;
+     console.log("lose: "+keepRunning);
+     losses++;
+     $("#loss-score").text("Losses: "+losses);
+     restart();
+   }
+   else if(score < randomNum){
+     console.log("not broken yet");
+     $("#score-board").text("Score: "+score);
+ }
+   else{
+     console.log("you win");
+     wins++;
+     keepRunning = false;
+     console.log("win: "+keepRunning);
+     restart();
+     $("#win-score").text("Wins: "+wins);
+     alert("YOU WIN");
+     restart();
+   }
  })
  $("#gem4").click(function(){
   console.log("g4 added") 
   score+=gems4;
   console.log("score: "+score) 
+   if(score > randomNum){
+     alert("You LOSE");
+     keepRunning=false;
+     console.log("lose: "+keepRunning);
+     losses++;
+     $("#loss-score").text("Losses: "+losses);
+     restart();
+   }
+   else if(score < randomNum){
+     console.log("not broken yet");
+     $("#score-board").text("Score: "+score);
+ }
+   else{
+     console.log("you win");
+     wins++;
+     keepRunning = false;
+     console.log("win: "+keepRunning);
+     restart();
+     $("#win-score").text("Wins: "+wins);
+     alert("YOU WIN");
+     restart();
+   }
  })
 
 
+
+function restart(){
+    gems1 = randomizeGems();
+    gems2 = randomizeGems();
+    gems3 = randomizeGems();
+    gems4 = randomizeGems();
+    score = 0;
+    var keepRunning = true;
+    console.log(keepRunning);
+    console.log("g1: "+gems1);
+    console.log("g2: "+gems2);
+    console.log("g3: "+gems3);
+    console.log("g4: "+gems4);
+    $("#score-board").text("Score: "+score);
+
+  }
+ 
 
 
 
