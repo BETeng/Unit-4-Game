@@ -25,7 +25,7 @@ console.log("g4: "+gems4);
 $("#win-score").text("Wins: "+wins);
 $("#loss-score").text("Losses: "+losses);
 $("#score-board").text("Score: "+score);
-
+$("#random-number").text("Score to Reach: "+randomNum);
 
 // if(keepRunning == false){
 //   restart();
@@ -41,6 +41,7 @@ $("#gem1").click(function(){
     console.log("lose: "+keepRunning);
     losses++;
     $("#loss-score").text("Losses: "+losses);
+
     restart();
   }
   else if(score < randomNum){
@@ -143,6 +144,7 @@ $("#gem2").click(function(){
 
 
 function restart(){
+    randomNum = randomize(19,120);
     gems1 = randomizeGems();
     gems2 = randomizeGems();
     gems3 = randomizeGems();
@@ -155,15 +157,9 @@ function restart(){
     console.log("g3: "+gems3);
     console.log("g4: "+gems4);
     $("#score-board").text("Score: "+score);
-
+    $("#random-number").text("Score to Reach: "+randomNum);
   }
  
-
-
-
-
-
-
 
 function randomize(min,max){
   min = Math.floor(min);
@@ -175,7 +171,7 @@ function randomizeGems(){
 }
 
 
-
+        // OLD IDEAS //
 // $(".gems").on(click, function(){
 
 
